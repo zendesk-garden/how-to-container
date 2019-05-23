@@ -1,0 +1,15 @@
+body {
+  margin: 20vh 0 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.tabs {
+  max-width: 80vw;
+}
+
+.selected {
+  background: #000;
+  color: #fff;
+}
