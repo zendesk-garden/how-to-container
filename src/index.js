@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import { useTabs } from '@zendeskgarden/container-tabs';
 
 import LoremIpsum from './LoremIpsum';
+import {
+  Settings,
+  Heart,
+  Mic,
+  StyledTabList,
+  Flex,
+  Order
+} from './styled-elements';
 import './styles.css';
 
 const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
 const tabRefs = tabs.map(() => createRef(null));
+
+const icons = [Settings, Heart, Mic];
 
 function Tabs() {
   const {
@@ -19,8 +29,10 @@ function Tabs() {
   const tabPanels = [];
 
   tabs.forEach((tab, index) => {
+    const TabComponent = icons[index];
+
     tabComponents.push(
-      <button
+      <TabComponent
         {...getTabProps({
           item: tab,
           index,
@@ -30,7 +42,7 @@ function Tabs() {
         })}
       >
         {tab}
-      </button>
+      </TabComponent>
     );
 
     tabPanels.push(
@@ -42,10 +54,10 @@ function Tabs() {
   });
 
   return (
-    <div className="tabs">
-      <div {...getTabListProps()}>{tabComponents}</div>
-      {tabPanels}
-    </div>
+    <Flex direction="column" className="tabs">
+      <StyledTabList {...getTabListProps()}>{tabComponents}</StyledTabList>
+      <Order order={-1}>{tabPanels}</Order>
+    </Flex>
   );
 }
 
