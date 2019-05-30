@@ -3,14 +3,7 @@ import ReactDOM from 'react-dom';
 import { useTabs } from '@zendeskgarden/container-tabs';
 
 import LoremIpsum from './LoremIpsum';
-import {
-  Settings,
-  Heart,
-  Mic,
-  StyledTabList,
-  Flex,
-  Order
-} from './styled-elements';
+import { Settings, Heart, Mic, StyledTabList, Rect } from './styled-elements';
 import './styles.css';
 
 const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
@@ -54,19 +47,17 @@ function Tabs() {
   });
 
   return (
-    <Flex direction="column" className="tabs">
+    <Rect display="flex" height="100vh" flexDirection="column" className="tabs">
       <StyledTabList {...getTabListProps()}>{tabComponents}</StyledTabList>
-      <Order order={-1}>{tabPanels}</Order>
-    </Flex>
+      <Rect order={-1} flex="1" padding="24px" overflow="auto">
+        {tabPanels}
+      </Rect>
+    </Rect>
   );
 }
 
 function App() {
-  return (
-    <div className="App">
-      <Tabs />
-    </div>
-  );
+  return <Tabs />;
 }
 
 const rootElement = document.getElementById('root');

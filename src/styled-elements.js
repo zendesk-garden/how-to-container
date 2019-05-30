@@ -4,6 +4,8 @@ import { ReactComponent as SettingsIcon } from '@zendeskgarden/svg-icons/src/16/
 import { ReactComponent as HeartIcon } from '@zendeskgarden/svg-icons/src/16/heart-stroke.svg';
 import { ReactComponent as MicIcon } from '@zendeskgarden/svg-icons/src/16/microphone-on-stroke.svg';
 
+import { cssProps, camelCaseToDash } from './cssProps';
+
 const Tab = styled.button`
   border: none;
   background: transparent;
@@ -62,11 +64,20 @@ export const StyledTabList = styled.div`
   align-items: center;
 `;
 
-export const Flex = styled.div`
-  display: flex;
-  ${props => props.direction && `flex-direction: ${props.direction}`}
+const StyledRect = styled.div`
+  ${({ css }) => css}
 `;
 
-export const Order = styled.div`
-  ${({ order }) => order && `order: ${order};`}
-`;
+export const Rect = ({ as, ref, ...props }) => {
+  const css = Object.entries(props).reduce((acc, item) => {
+    const [prop, val] = item;
+
+    if (cssProps.indexOf(prop) !== -1) {
+      acc += `${camelCaseToDash(prop)}: ${val};`;
+    }
+
+    return acc;
+  }, '');
+
+  return <StyledRect as={as} ref={ref} css={css} {...props} />;
+};
