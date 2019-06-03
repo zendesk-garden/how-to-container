@@ -1,15 +1,41 @@
 body {
-  margin: 20vh 0 0;
-  display: flex;
-  justify-content: center;
   height: 100vh;
 }
 
-.tabs {
-  max-width: 80vw;
+.App {
+  width: 680px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
 }
 
-.selected {
-  background: #000;
-  color: #fff;
+.wrapper {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  background-color: white;
+  box-shadow: rgba(60, 20, 20, 0.1) 0px -4px 30px;
+  overflow: hidden;
+}
+
+.container {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif;
+  background-color: rgb(244, 244, 244);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
 }
