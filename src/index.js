@@ -47,9 +47,23 @@ function Tabs() {
   });
 
   return (
-    <Rect display="flex" height="100vh" flexDirection="column" className="tabs">
+    <Rect
+      css={`
+        display: flex;
+        height: 90vh;
+        flex-direction: column;
+      `}
+      className="tabs"
+    >
       <StyledTabList {...getTabListProps()}>{tabComponents}</StyledTabList>
-      <Rect order={-1} flex="1" padding="24px" overflow="auto">
+      <Rect
+        css={`
+          order: -1;
+          flex: 1;
+          padding: 24px;
+          overflow: auto;
+        `}
+      >
         {tabPanels}
       </Rect>
     </Rect>
