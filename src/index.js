@@ -9,11 +9,12 @@ const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
 const tabRefs = tabs.map(() => createRef(null));
 
 function Tabs() {
-  const [selectedItem, setSelectedItem] = useState(tabs[0]);
-  const { getTabProps, getTabListProps, getTabPanelProps } = useTabs({
+  const {
     selectedItem,
-    onSelect: setSelectedItem
-  });
+    getTabProps,
+    getTabListProps,
+    getTabPanelProps
+  } = useTabs();
   const tabComponents = [];
   const tabPanels = [];
 

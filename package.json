@@ -14,7 +14,7 @@
     "@zendeskgarden/container-pagination": "^0.1.4",
     "@zendeskgarden/container-schedule": "^0.3.0",
     "@zendeskgarden/container-selection": "^1.0.2",
-    "@zendeskgarden/container-tabs": "^0.1.0",
+    "@zendeskgarden/container-tabs": "^0.2.0",
     "@zendeskgarden/container-tooltip": "^0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

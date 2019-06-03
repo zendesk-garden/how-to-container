@@ -1547,12 +1547,19 @@
   dependencies:
     "@zendeskgarden/container-utilities" "^0.1.0"
 
-"@zendeskgarden/container-tabs@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/container-tabs/-/container-tabs-0.1.0.tgz#62585eb43fcd0fbfaa32685cf4f5aebfafc2789e"
-  integrity sha512-QE4QkHdVFA/AgURIe6yAtw6ji2ZhHtZ7iwgsXnD3/poiB57smFOml5kgbPGdWrNreEhNLwzcTTyYwGTftrmHCg==
+"@zendeskgarden/container-selection@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/container-selection/-/container-selection-1.1.0.tgz#017f1f310ebb9b9cc82a2107e10344e4cb48b9b0"
+  integrity sha512-2yTRrfddd/0Dcxsp6KVerSghZoMclEgL2MCspBWwUi5sJrdq5QGB2f/Mw745Wej/lIc51NNKXvArBafPEwgqIQ==
   dependencies:
-    "@zendeskgarden/container-selection" "^1.0.2"
+    "@zendeskgarden/container-utilities" "^0.1.0"
+
+"@zendeskgarden/container-tabs@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/container-tabs/-/container-tabs-0.2.0.tgz#e52c559666f485082f80c229854523bd58dfa7be"
+  integrity sha512-Al7wU83GEiMhiCwUgPRj878FBH+saA5IhzDEV/8UpU3g+/kDW17GG12a5JyM6SLygfRbm9SSMGLWrF5L0VGOPA==
+  dependencies:
+    "@zendeskgarden/container-selection" "^1.1.0"
     "@zendeskgarden/container-utilities" "^0.1.0"
 
 "@zendeskgarden/container-tooltip@^0.2.0":
