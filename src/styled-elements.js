@@ -55,7 +55,16 @@ export const TabList = styled.div`
 
 export const TabLabel = styled.span`
   margin-left: 8px;
-  ${({ vertical }) => vertical && 'display: none'}
+  ${({ vertical }) =>
+    vertical &&
+    `
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    width: 1px;
+    position: absolute;
+  `}
 `;
 
 export const TabPanel = styled.div`

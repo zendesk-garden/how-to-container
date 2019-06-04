@@ -1,19 +1,17 @@
 import React, { createRef, useState } from 'react';
 import { useTabs } from '@zendeskgarden/container-tabs';
 import { ReactComponent as SettingsIcon } from '@zendeskgarden/svg-icons/src/16/gear-fill.svg';
+import { ReactComponent as ToolsIcon } from '@zendeskgarden/svg-icons/src/16/box-3d-fill.svg';
+import { ReactComponent as UserIcon } from '@zendeskgarden/svg-icons/src/16/user-group-fill.svg';
+import { ReactComponent as AdjustIcon } from '@zendeskgarden/svg-icons/src/16/adjust-fill.svg';
+import { ReactComponent as GridIcon } from '@zendeskgarden/svg-icons/src/16/grid-2x2-fill.svg';
 import 'styled-components/macro';
 
 import { Other } from './Other';
 import { Header } from './Header';
 import { Main, TabItem, TabList, TabLabel, TabPanel } from './styled-elements';
 
-const icons = [
-  SettingsIcon,
-  SettingsIcon,
-  SettingsIcon,
-  SettingsIcon,
-  SettingsIcon
-];
+const icons = [GridIcon, AdjustIcon, UserIcon, ToolsIcon, SettingsIcon];
 const tabs = ['Dashboard', 'Connect', 'Accounts', 'Tools', 'Settings'];
 const tabRefs = tabs.map(() => createRef(null));
 
