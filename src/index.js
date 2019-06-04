@@ -1,23 +1,19 @@
-import React, { createRef, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Menu } from './Menu';
-import { Other } from './Other';
+import { App } from './App';
+
 import './styles.css';
 
-function App() {
+function Main() {
   return (
     <div className="App">
       <div className="wrapper">
-        <div className="container">
-          <div className="flexColumn">
-            <Menu />
-          </div>
-        </div>
+        <App />
       </div>
     </div>
   );
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Main />, rootElement);

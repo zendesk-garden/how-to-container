@@ -76,198 +76,212 @@ const FooterItem = styled.div`
   margin: 0px 10px;
 `;
 
-export const Other = props => (
-  <>
-    <div
-      css={`
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      `}
-    >
+export const Other = props => {
+  const { vertical, toggleVertical } = props;
+  return (
+    <>
       <div
         css={`
-          padding-top: 12px;
-          padding-left: 12px;
-          padding-right: 12px;
+          flex: 1;
           display: flex;
-          border-bottom: 0px solid rgb(228, 228, 228);
-        `}
-      >
-        <Stats>
-          <div
-            css={`
-              text-align: left;
-              display: flex;
-              flex-direction: row;
-              padding: 12px 0px;
-            `}
-          >
-            <StatsItem>
-              <StatsCounter number={31.2} type="M" label="Completed" />
-            </StatsItem>
-            <StatsItem>
-              <StatsCounter number={12.2} type="M" label="In Progress" />
-            </StatsItem>
-            <StatsItem>
-              <StatsCounter number={2.3} type="M" label="Inactive" />
-            </StatsItem>
-            <StatsItem>
-              <StatsCounter number={97} type="%" label="Activity Rate" />
-            </StatsItem>
-          </div>
-        </Stats>
-      </div>
-      <div
-        css={`
-          padding-top: 12px;
-          padding-left: 12px;
-          padding-right: 12px;
-          display: flex;
-          flex: 1 1 0%;
+          flex-direction: column;
         `}
       >
         <div
           css={`
-            background-color: rgb(255, 255, 255);
-            color: rgb(54, 54, 54);
-            box-shadow: rgba(0, 20, 40, 0.043) 0px 3px 4px 0px;
-            font-weight: 400;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-width: 0px;
-            border-style: solid;
-            border-color: rgb(228, 228, 228);
-            border-image: initial;
-            border-radius: 1px;
+            border-bottom: 0px solid rgb(228, 228, 228);
+            ${!vertical
+              ? `
+            padding-top: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
+            `
+              : 'border-width: 0 0 1px;'}
+          `}
+        >
+          <Stats>
+            <div
+              css={`
+                text-align: left;
+                display: flex;
+                flex-direction: row;
+                padding: 12px 0px;
+              `}
+            >
+              <StatsItem>
+                <StatsCounter number={31.2} type="M" label="Completed" />
+              </StatsItem>
+              <StatsItem>
+                <StatsCounter number={12.2} type="M" label="In Progress" />
+              </StatsItem>
+              <StatsItem>
+                <StatsCounter number={2.3} type="M" label="Inactive" />
+              </StatsItem>
+              <StatsItem>
+                <StatsCounter number={97} type="%" label="Activity Rate" />
+              </StatsItem>
+            </div>
+          </Stats>
+        </div>
+        <div
+          css={`
+            ${!vertical &&
+              `
+            padding-top: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
+            `}
+            display: flex;
             flex: 1 1 0%;
-            padding: 12px;
           `}
         >
           <div
             css={`
+              background-color: rgb(255, 255, 255);
               color: rgb(54, 54, 54);
-              border-bottom: 0px solid rgb(228, 228, 228);
-              flex: 0 1 0%;
-            `}
-          >
-            Your {props.selectedItem}
-          </div>
-          <div
-            css={`
+              box-shadow: rgba(0, 20, 40, 0.043) 0px 3px 4px 0px;
+              font-weight: 400;
               display: flex;
+              flex-direction: column;
+              justify-content: center;
+              border-width: 0px;
+              border-style: solid;
+              border-color: rgb(228, 228, 228);
+              border-image: initial;
+              border-radius: 1px;
               flex: 1 1 0%;
+              padding: 12px;
             `}
           >
             <div
               css={`
-                text-align: left;
-                align-self: center;
-                display: block;
-                width: 100%;
+                color: rgb(54, 54, 54);
+                border-bottom: 0px solid rgb(228, 228, 228);
+                flex: 0 1 0%;
+              `}
+            >
+              Your {props.selectedItem}
+            </div>
+            <div
+              css={`
+                display: flex;
+                flex: 1 1 0%;
               `}
             >
               <div
                 css={`
-                  font-size: 14px;
-                  line-height: 20.3px;
-                  font-weight: 600;
-                  color: rgb(191, 191, 191);
                   text-align: left;
-                  padding: 8px 0px;
+                  align-self: center;
+                  display: block;
+                  width: 100%;
                 `}
               >
-                No Favorites yet. After you've added some favorites, you'll have
-                quick access to them here.
+                <div
+                  css={`
+                    font-size: 14px;
+                    line-height: 20.3px;
+                    font-weight: 600;
+                    color: rgb(191, 191, 191);
+                    text-align: left;
+                    padding: 8px 0px;
+                  `}
+                >
+                  No Favorites yet. After you've added some favorites, you'll
+                  have quick access to them here.
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          css={`
-            background-color: rgb(255, 255, 255);
-            color: rgb(54, 54, 54);
-            box-shadow: rgba(0, 20, 40, 0.043) 0px 3px 4px 0px;
-            font-weight: 400;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-width: 0px;
-            border-style: solid;
-            border-color: rgb(228, 228, 228);
-            border-image: initial;
-            border-radius: 1px;
-            flex: 1 1 0%;
-            padding: 12px;
-            margin-left: 12px;
-          `}
-        >
           <div
             css={`
+              background-color: rgb(255, 255, 255);
               color: rgb(54, 54, 54);
-              border-bottom: 0px solid rgb(228, 228, 228);
-              flex: 0 1 0%;
-            `}
-          >
-            Active Agents
-          </div>
-          <div
-            css={`
+              box-shadow: rgba(0, 20, 40, 0.043) 0px 3px 4px 0px;
+              font-weight: 400;
               display: flex;
+              flex-direction: column;
+              justify-content: center;
+              border-width: 0px;
+              border-style: solid;
+              border-color: rgb(228, 228, 228);
+              border-image: initial;
+              border-radius: 1px;
               flex: 1 1 0%;
+              padding: 12px;
+              ${vertical
+                ? 'border-left: 1px solid rgb(228, 228, 228);'
+                : 'margin-left: 12px;'}
             `}
           >
             <div
               css={`
-                text-align: left;
-                align-self: center;
-                display: block;
-                width: 100%;
+                color: rgb(54, 54, 54);
+                border-bottom: 0px solid rgb(228, 228, 228);
+                flex: 0 1 0%;
               `}
             >
-              <button>Add an agent</button>
+              Active Agents
+            </div>
+            <div
+              css={`
+                display: flex;
+                flex: 1 1 0%;
+              `}
+            >
+              <div
+                css={`
+                  text-align: left;
+                  align-self: center;
+                  display: block;
+                  width: 100%;
+                `}
+              >
+                <button onClick={() => toggleVertical(!vertical)}>
+                  Toggle UI
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      css={`
-        height: 40px;
-        opacity: 1;
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        -webkit-box-pack: start;
-        justify-content: flex-start;
-        -webkit-box-align: center;
-        align-items: center;
-        padding: 0px 12px;
-        border-top: 0px solid rgb(228, 228, 228);
-        overflow: hidden;
-      `}
-    >
       <div
         css={`
-          margin-left: -10px;
+          height: 40px;
+          opacity: 1;
+          background-color: transparent;
           display: flex;
           flex-direction: row;
-          -webkit-box-flex: 1;
-          flex-grow: 1;
+          -webkit-box-pack: start;
+          justify-content: flex-start;
+          -webkit-box-align: center;
+          align-items: center;
+          padding: 0px 12px;
+          border-top: 0px solid rgb(228, 228, 228);
+          overflow: hidden;
         `}
       >
-        <FooterItem>Home</FooterItem>
-        <FooterItem>Careers</FooterItem>
-        <FooterItem>Legal &amp; Privacy</FooterItem>
+        <div
+          css={`
+            margin-left: -10px;
+            display: flex;
+            flex-direction: row;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+          `}
+        >
+          <FooterItem>Home</FooterItem>
+          <FooterItem>Careers</FooterItem>
+          <FooterItem>Legal &amp; Privacy</FooterItem>
+        </div>
+        <div
+          css={`
+            margin-right: -10px;
+          `}
+        >
+          <FooterItem>© 2019 Pale Visual</FooterItem>
+        </div>
       </div>
-      <div
-        css={`
-          margin-right: -10px;
-        `}
-      >
-        <FooterItem>© 2019 Pale Visual</FooterItem>
-      </div>
-    </div>
-  </>
-);
+    </>
+  );
+};

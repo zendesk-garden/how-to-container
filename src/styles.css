@@ -1,16 +1,15 @@
 body {
   height: 100vh;
+  margin: 0;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif;
 }
 
 .App {
-  width: 680px;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px;
+  flex-direction: column;
 }
 
 .wrapper {
@@ -20,21 +19,22 @@ body {
   background-color: white;
   box-shadow: rgba(60, 20, 20, 0.1) 0px -4px 30px;
   overflow: hidden;
+  display: flex;
 }
 
-.container {
-  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif;
-  background-color: rgb(244, 244, 244);
+.wrapper::before {
+  icontent: "";
+  display: block;
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  display: flex;
-  flex-direction: row;
+  box-shadow: rgba(40, 50, 100, 0.1) 0px 4px 12px;
 }
 
-.flexColumn {
+.container {
+  background-color: rgb(244, 244, 244);
   display: flex;
   flex-direction: column;
   flex: 1 1 0%;
