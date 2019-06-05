@@ -1,0 +1,6 @@
+body {
+  margin: 20vh 0 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
