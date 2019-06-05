@@ -8,8 +8,14 @@ import { ReactComponent as GridIcon } from '@zendeskgarden/svg-icons/src/16/grid
 import 'styled-components/macro';
 
 import { Other } from './Other';
-import { Header } from './Header';
-import { Main, TabItem, TabList, TabLabel, TabPanel } from './styled-elements';
+import {
+  Main,
+  AppHeader,
+  TabItem,
+  TabList,
+  TabLabel,
+  TabPanel
+} from './styled-elements';
 
 const icons = [GridIcon, AdjustIcon, UserIcon, ToolsIcon, SettingsIcon];
 const tabs = ['Dashboard', 'Connect', 'Accounts', 'Tools', 'Settings'];
@@ -17,13 +23,14 @@ const tabRefs = tabs.map(() => createRef(null));
 
 function Tabs() {
   const [vertical, toggleVertical] = useState(false);
+  const [rtl, toggleRtl] = useState(false);
   const {
     selectedItem,
     focusedItem,
     getTabProps,
     getTabListProps,
     getTabPanelProps
-  } = useTabs({ vertical });
+  } = useTabs({ vertical, rtl: vertical ? false : rtl });
   const tabComponents = [];
   const tabPanels = [];
 
@@ -53,14 +60,20 @@ function Tabs() {
           selectedItem={selectedItem}
           vertical={vertical}
           toggleVertical={toggleVertical}
+          rtl={rtl}
+          toggleRtl={toggleRtl}
         />
       </TabPanel>
     );
   });
 
   return (
-    <Main vertical={vertical}>
-      {!vertical && <Header selectedItem={selectedItem} />}
+    <Main vertical={vertical} dir={rtl ? 'rtl' : undefined}>
+      {!vertical && (
+        <AppHeader>
+          <h1>Pale Visual - {selectedItem}</h1>
+        </AppHeader>
+      )}
       <TabList {...getTabListProps({ vertical })}>{tabComponents}</TabList>
       <div
         css={`

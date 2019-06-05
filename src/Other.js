@@ -77,7 +77,7 @@ const FooterItem = styled.div`
 `;
 
 export const Other = props => {
-  const { vertical, toggleVertical } = props;
+  const { vertical, toggleVertical, rtl, toggleRtl } = props;
   return (
     <>
       <div
@@ -103,7 +103,7 @@ export const Other = props => {
           <Stats>
             <div
               css={`
-                text-align: left;
+                text-align: start;
                 display: flex;
                 flex-direction: row;
                 padding: 12px 0px;
@@ -171,7 +171,7 @@ export const Other = props => {
             >
               <div
                 css={`
-                  text-align: left;
+                  text-align: start;
                   align-self: center;
                   display: block;
                   width: 100%;
@@ -183,7 +183,7 @@ export const Other = props => {
                     line-height: 20.3px;
                     font-weight: 600;
                     color: rgb(191, 191, 191);
-                    text-align: left;
+                    text-align: start;
                     padding: 8px 0px;
                   `}
                 >
@@ -210,8 +210,8 @@ export const Other = props => {
               flex: 1 1 0%;
               padding: 12px;
               ${vertical
-                ? 'border-left: 1px solid rgb(228, 228, 228);'
-                : 'margin-left: 12px;'}
+                ? 'border-inline-start: 1px solid rgb(228, 228, 228);'
+                : 'margin-inline-start: 12px;'}
             `}
           >
             <div
@@ -231,57 +231,61 @@ export const Other = props => {
             >
               <div
                 css={`
-                  text-align: left;
+                  text-align: start;
                   align-self: center;
-                  display: block;
+                  display: flex;
+                  justify-content: space-evenly;
                   width: 100%;
                 `}
               >
                 <button onClick={() => toggleVertical(!vertical)}>
                   Toggle UI
                 </button>
+                <button onClick={() => toggleRtl(!rtl)}>Toggle RTL</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-        css={`
-          height: 40px;
-          opacity: 1;
-          background-color: transparent;
-          display: flex;
-          flex-direction: row;
-          -webkit-box-pack: start;
-          justify-content: flex-start;
-          -webkit-box-align: center;
-          align-items: center;
-          padding: 0px 12px;
-          border-top: 0px solid rgb(228, 228, 228);
-          overflow: hidden;
-        `}
-      >
+      {!vertical && (
         <div
           css={`
-            margin-left: -10px;
+            height: 40px;
+            opacity: 1;
+            background-color: transparent;
             display: flex;
             flex-direction: row;
-            -webkit-box-flex: 1;
-            flex-grow: 1;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: 0px 12px;
+            border-top: 0px solid rgb(228, 228, 228);
+            overflow: hidden;
           `}
         >
-          <FooterItem>Home</FooterItem>
-          <FooterItem>Careers</FooterItem>
-          <FooterItem>Legal &amp; Privacy</FooterItem>
+          <div
+            css={`
+              margin-inline-start: -10px;
+              display: flex;
+              flex-direction: row;
+              -webkit-box-flex: 1;
+              flex-grow: 1;
+            `}
+          >
+            <FooterItem>Home</FooterItem>
+            <FooterItem>Careers</FooterItem>
+            <FooterItem>Legal &amp; Privacy</FooterItem>
+          </div>
+          <div
+            css={`
+              margin-inline-end: -10px;
+            `}
+          >
+            <FooterItem>© 2019 Pale Visual</FooterItem>
+          </div>
         </div>
-        <div
-          css={`
-            margin-right: -10px;
-          `}
-        >
-          <FooterItem>© 2019 Pale Visual</FooterItem>
-        </div>
-      </div>
+      )}
     </>
   );
 };

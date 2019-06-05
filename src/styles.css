@@ -22,20 +22,16 @@ body {
   display: flex;
 }
 
-.wrapper::before {
-  icontent: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  box-shadow: rgba(40, 50, 100, 0.1) 0px 4px 12px;
-}
-
 .container {
   background-color: rgb(244, 244, 244);
   display: flex;
   flex-direction: column;
   flex: 1 1 0%;
+}
+
+.og {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
 }

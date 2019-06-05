@@ -14,7 +14,7 @@ export const TabItem = styled.div`
     if (vertical) {
       return `
         padding: 12px 0;
-        border-left: 2px solid transparent;
+        border-inline-start: 2px solid transparent;
         width: 100%;
       `;
     } else {
@@ -36,7 +36,7 @@ export const TabList = styled.div`
       return `
         flex-direction: column;
         width: 56px;
-        border-right: 1px solid rgb(228, 228, 228);
+        border-inline-end: 1px solid rgb(228, 228, 228);
         padding-top: 10px;
       `;
     } else {
@@ -54,7 +54,7 @@ export const TabList = styled.div`
 `;
 
 export const TabLabel = styled.span`
-  margin-left: 8px;
+  margin-inline-start: 8px;
   ${({ vertical }) =>
     vertical &&
     `
